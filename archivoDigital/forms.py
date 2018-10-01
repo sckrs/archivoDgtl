@@ -22,10 +22,10 @@ class UserCreationForm(forms.ModelForm):
 
 
 class UserChangeForm(forms.ModelForm):
-    password = auth_forms.ReadOnlyPasswordHashField(label="Password",
-        help_text="Raw passwords are not stored, so there is no way to see "
-                  "this user's password, but you can change the password "
-                  "using <a href=\"password/\">this form</a>.")
+
+    password = auth_forms.ReadOnlyPasswordHashField(label="Contraseña",#)
+        help_text="Puede cambiar la contraseña activando este checkbox"
+                  "&nbsp;&nbsp;&nbsp;<input id=\"one\" type=\"checkbox\" value=\"Cambiar Contraseña\" name=\"changePass\">")
 
     class Meta:
         model = User
@@ -39,3 +39,15 @@ class UserChangeForm(forms.ModelForm):
 
     def clean_password(self):
         return self.initial["password"]
+
+    def save(self,commit=True):
+        data=self.cleaned_data
+        user = super(UserChangeForm, self).save(commit=False)
+        if data['changePass']=='change':
+            data['changePass']==''
+            passW=User.objects.make_random_password()
+            user.set_password(passW)
+        print(passW)
+        if commit:
+            user.save()
+        return user

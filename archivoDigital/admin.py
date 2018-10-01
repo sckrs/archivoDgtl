@@ -7,9 +7,9 @@ from archivoDigital.forms import UserChangeForm, UserCreationForm
 class UserAdmin(auth_admin.UserAdmin):
     list_display = ('first_name','last_name','email','area','is_active')
     fieldsets = (
-        ('Credenciales de acceso', {'fields': ('email', 'password')}),
+        ('Credenciales_de_acceso', {'fields': ('email', 'password')}),
         ('Información del Usuario', {'fields': ('first_name', 'last_name','area','cargo','phone','extension','photo')}),
-        ('Permisos', {'fields': ('is_active', 'is_staff', 'is_superuser',
+        ('Permisos', {'fields': ('is_active', 'is_staff', 'is_superuser','changePass',
                                        'groups', 'user_permissions')}),
         ('Fechas', {'fields': ('last_login', 'date_joined')}),
     )
@@ -27,6 +27,7 @@ class UserAdmin(auth_admin.UserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
     change_password_form = auth_admin.AdminPasswordChangeForm
+    change_form_template = "admin/pass_change_form.html"
     list_display = ('email', 'first_name', 'last_name', 'is_superuser')
     list_filter = ('is_staff', 'is_superuser', 'is_active', 'groups')
     search_fields = ('first_name', 'last_name', 'email')

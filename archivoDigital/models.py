@@ -27,12 +27,13 @@ class User(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
     is_staff = models.BooleanField(default=False,verbose_name=_('Administrador'))
     is_active = models.BooleanField(default=True,verbose_name=_('Activo'))
     date_joined = models.DateTimeField(auto_now_add=True,verbose_name=_('Fecha de alta'))
+    changePass = models.CharField(max_length=30,verbose_name=_('Cambio de password'))
 
     phone = models.IntegerField(default=1,verbose_name=_('Teléfono'))
     extension = models.IntegerField(default=1,verbose_name=_('Extensión'))
     photo = models.ImageField(upload_to='fotoUsuarios', null=True, blank=True,verbose_name=_('Foto de perfil'))
-    area = models.ForeignKey('Area',on_delete=models.CASCADE,null=True,verbose_name=_('Área'))
-    cargo = models.CharField(max_length=150,null=True,verbose_name=_('Cargo'))
+    area = models.ForeignKey('Area',on_delete=models.CASCADE,null=True,blank=True,verbose_name=_('Área'))
+    cargo = models.CharField(max_length=150,null=True,blank=True,verbose_name=_('Cargo'))
 
     objects = UserManager()
 
