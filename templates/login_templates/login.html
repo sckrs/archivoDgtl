@@ -1,0 +1,184 @@
+<!doctype html>
+{% load staticfiles %}
+<!--Conditionals for IE8-9 Support-->
+<!--[if IE]><html lang="en" class="ie"><![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Archivo Digital CIESAS</title>
+
+    <!--SEO Meta Tags-->
+    <meta name="description" content="Responsive Multipurpose HTML5 Template" />
+		<meta name="keywords" content="responsive html5 template, multipurpose, blog, portfolio, e-commerce, bootstrap 3, css, jquery, flat, modern" />
+		<meta name="author" content="8Guild" />
+    <!--Mobile Specific Meta Tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!--Favicon-->
+    <link rel="shortcut icon" href="{% static 'archivoDigital/img/ciesas.png' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'archivoDigital/img/ciesas.png' %}" type="image/x-icon">
+    <!--Master Slider Styles-->
+    <link href="{% static 'archivoDigital/css/masterslider.css' %}" rel="stylesheet" media="screen">
+    <!--Kedavra Stylesheet-->
+    <link href="{% static 'archivoDigital/css/styles.css' %}" rel="stylesheet" media="screen">
+    <!--Kedavra Color Scheme-->
+    <link class="color-scheme" href="{% static 'archivoDigital/css/color-2f8cea.css' %}" rel="stylesheet" media="screen">
+    <!--Google Maps API-->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5DLwPPVAz88_k0yO2nmFe7T9k1urQs84"></script>
+    <!--Modernizr-->
+		<script src="{% static 'archivoDigital/js/libs/modernizr.custom.js' %}"></script>
+    <!--Adding Media Queries Support for IE8-->
+    <!--[if lt IE 9]>
+      <script src="js/plugins/respond.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <!--Body-->
+  <body class="parallax animated fadeIn"><!--Add "parallax" class if you have elements on the page with parallax backgrounds. "fadeIn" class makes content fades in on loading-->
+
+    <!--Off-Canvas-->
+    <div class="off-canvas-wrap" data-offcanvas>
+    	<div class="inner-wrap">
+
+
+        <!--Layout-->
+        <div class="site-layout"><!--If you add class "boxed" to .site-layout it wraps the whole document in a box, than you can simply add pattern background to body or leave it white. Please note in a "boxed" mode header doesn't stick to the top.-->
+
+          <!--Header-->
+          <header class="header sticky"><!--Adding class "sticky" to header enables its pinning to top on scroll. Please note in a "boxed" mode header doesn't stick to the top.-->
+            <div class="inner">
+              <div class="container group">
+                <!--Logo-->
+                <a class="logo" href="#"><img src="{% static 'archivoDigital/img/logo.png' %}" alt="conacyt"/></a>
+                <!--Tools-->
+                <div class="tools group">
+                  <a class="logo" href="#"><img src="{% static 'archivoDigital/img/ciesas_logo.png' %}" alt="conacyt"/></a>
+                </div><!--Tools Close-->
+
+              </div>
+            </div>
+          </header><!--Header Close-->
+          <!--Page Content--><!-- InstanceBeginEditable name="content" -->
+        <div class="page">
+          <!--Login Page-->
+          <div id="loginPage" class="specialty-page-bg"></div>
+          <section class="specialty-page">
+          	<div class="container">
+            	<div class="row">
+              	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+                  <div class="page-heading">
+                    <h2>Archivo Digital CIESAS</h2>
+                    <h3>Para ingresar ingrese sus credenciales de acceso</h3>
+                  </div>
+                  <form method="post" class="login-form space-bottom">
+                    <div class="form-group">
+                      <label class="sr-only" for="email"></label>
+                      <input type="email" class="form-control input-lg" name="email" id="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="password"></label>
+                      <input type="password" class="form-control input-lg" name="password" id="password" placeholder="Contraseña" required>
+                    </div>
+                    <input class="btn btn-md btn-primary btn-center" type="submit" value="Ingresar">
+                  </form>
+                  <p><dl>
+                    <dd>Si ha olvidado su contraseña favor de enviar un correo electrónico a:</dd>
+                    <dd>ing.sc.husg@gmail.com</dd>
+                    <dd>Solicitando un cambio de contraseña</dd>
+                  </dl></p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--jklasjaskjdlkj-->
+          <section class="info-box gray">
+            <div class="container space-top space-bottom">
+              <div class="row">
+                <div class="col-sm-12">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                  <h4 class="light-color">45 años de existencia</h4>
+                </div>
+                <div class="col-sm-4">
+                  <h4 class="light-color">Acceso a la información</h4>
+                </div>
+                <div class="col-sm-4">
+                  <h4 class="light-color">Objetivo</h4>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                  <img style="width: 60%;margin-left:20%;" src="{% static 'archivoDigital/img/CI.png' %}"/>
+                </div>
+                <div class="col-sm-4">
+                  <img src="{% static 'archivoDigital/img/ac.png' %}"/>
+                </div>
+                <div class="col-sm-4">
+                  <img src="{% static 'archivoDigital/img/objetivo.png' %}"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                  <p>El Centro de Investigaciones y Estudios Superiores en Antropología cumple 45 años</p>
+                </div>
+                <div class="col-sm-4">
+                  <p>Este portal pone a su disposición los expedientes generados durante la gestión 2015-2018.</p>
+                </div>
+                <div class="col-sm-4">
+                  <p>El objetivo principal de este portal es formar parte del acta entrega del Director General.</p>
+                </div>
+              </div>
+            </div>
+          </section><!--Info Box Widget Close-->
+
+        </div>
+        <!--Page Content Close-->
+
+          <!--Footer-->
+          <footer class="footer">
+            <div class="copyright text-center">
+              <div class="container">
+                <p class="pull-left">CIESAS, Copyright @ 2018</p>
+                <div class="social-bar"></div>
+              </div>
+            </div>
+          </footer><!--Footer Close-->
+
+        </div><!--Layout Close-->
+
+        <!-- close the off-canvas menu -->
+        <a class="exit-off-canvas"></a>
+      </div>
+    </div><!--Off-Canvas Close-->
+
+
+    <!--Javascript (jQuery) Libraries and Plugins-->
+		<script src="{% static 'archivoDigital/js/libs/jquery-1.11.1.min.js' %}"></script>
+    <script src="{% static 'archivoDigital/js/libs/jquery.easing.min.js' %}"></script>
+		<script src="{% static 'archivoDigital/js/plugins/bootstrap.min.js' %}"></script>
+		<script src="{% static 'archivoDigital/js/plugins/smoothscroll.js' %}"></script>
+    <script src="{% static 'archivoDigital/js/plugins/utilities.js' %}"></script>
+		<script src="{% static 'archivoDigital/js/plugins/foundation.min.js' %}"></script>
+		<script src="{% static 'archivoDigital/js/plugins/jquery.placeholder.js' %}"></script>
+    <script src="{% static 'archivoDigital/js/plugins/icheck.min.js' %}"></script>
+		<script src="{% static 'archivoDigital/js/plugins/jquery.validate.min.js' %}"></script>
+		<script src="{% static 'archivoDigital/js/plugins/waypoints.min.js' %}"></script>
+   	<script src="{% static 'archivoDigital/js/plugins/isotope.min.js' %}"></script>
+		<script src="{% static 'archivoDigital/js/plugins/masterslider.min.js' %}"></script>
+		<script src="{% static 'archivoDigital/js/plugins/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'archivoDigital/js/plugins/lightGallery.min.js' %}"></script>
+		<script src="{% static 'archivoDigital/js/plugins/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'archivoDigital/js/plugins/jquery.parallax.min.js' %}"></script>
+		<script src="{% static 'archivoDigital/js/plugins/chart.min.js' %}"></script>
+    <script src="{% static 'archivoDigital/js/plugins/jquery-numerator.js' %}"></script>
+    <script src="{% static 'archivoDigital/js/plugins/jquery.countdown.min.js' %}"></script>
+	  <script src="{% static 'archivoDigital/js/plugins/jquery.easypiechart.min.js' %}"></script>
+    <script src="{% static 'archivoDigital/js/plugins/jquery.nouislider.min.js' %}"></script>
+    <script src="{% static 'archivoDigital/js/plugins/card.min.js' %}"></script>
+    <script src="{% static 'archivoDigital/js/scripts.js' %}"></script>
+
+  </body><!--Body Close-->
+</html>
