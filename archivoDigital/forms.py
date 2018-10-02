@@ -1,5 +1,8 @@
 from django import forms
 from django.contrib.auth import forms as auth_forms
+from django.contrib import messages
+from django.conf import settings
+from django.core.mail import send_mail
 from archivoDigital.models import User
 
 class UserCreationForm(forms.ModelForm):
@@ -7,19 +10,15 @@ class UserCreationForm(forms.ModelForm):
         model = User
         fields = ('email','first_name','last_name')
 
-    def gen_passwd(length=8):
-        chars = string.letters + string.digits
-        return ''.join([choice(chars) for i in range(length)])
-
     def save(self, commit=True):
         user = super(UserCreationForm, self).save(commit=False)
+        form = self.cleaned_data
         passW=User.objects.make_random_password()
-        print(passW)
         user.set_password(passW)
+        sender(passW,form['email'],'Bienvenido al Archivo Digital','Su usuario ha sido creado exitosamente.')
         if commit:
             user.save()
         return user
-
 
 class UserChangeForm(forms.ModelForm):
 
@@ -46,8 +45,15 @@ class UserChangeForm(forms.ModelForm):
         if data['changePass']=='change':
             data['changePass']==''
             passW=User.objects.make_random_password()
+            sender(passW,data['email'],'Su clave de acceso al Archivo Digital ha sido modificada','Su usuario ha sido creado exitosamente.')
             user.set_password(passW)
-        print(passW)
         if commit:
             user.save()
         return user
+
+def sender(passW,to,subject,message):
+    from_email=settings.EMAIL_HOST_USER
+    to_email=[to]
+    extraMessage = 'Sus claves de acceso son usuario: {0}, Contraseña: {1}'.format(to,passW)
+    send_mail(subject=subject,from_email=from_email,recipient_list=to_email,message=message.join([extraMessage]))
+    
