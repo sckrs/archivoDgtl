@@ -140,3 +140,5 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+LOGIN_URL = 'archivoDgtl/login_templates'

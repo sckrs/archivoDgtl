@@ -22,4 +22,5 @@ from archivoDigital import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$',views.userLogin,name='userLogin'),
+    url(r'^archivoDigital/',views.archivoDigital,name='archivoDigital'),
 ]
