@@ -1,3 +1,4 @@
+if(document.querySelector('#id_changePass').value="change")document.querySelector('#id_changePass').value="";
 document.querySelector('.field-changePass').style.visibility = 'hidden';
 document.querySelector('#id_changePass').style.visibility = 'hidden';
 

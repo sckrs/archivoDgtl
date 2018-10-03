@@ -14,19 +14,9 @@ def userLogin(request):
             user = authenticate(email=email, password=password)
             # If we have a user
             if user:
-                #Check it the account is active
-                if user.is_active:
-                    # Log the user in.
-                    login(request,user)
-                    # Send the user back to some page.
-                    # In this case their homepage.
-                    return archivoDigital(request,email)
-                else:
-                    # If account is not active:
-                    return render(request, 'login_templates/login.html', { 'error':True,'mensaje':"El usuario {} se encuentra bloqueado, envie un correo a admin@admin.com solicitando un desbloqueo de usuario".format(email) })
+                login(request,user)
+                return archivoDigital(request,email)
             else:
-                print("Someone tried to login and failed.")
-                print("They used username: {} and password: {}".format(email,password))
                 return render(request, 'login_templates/login.html', { 'error':True,'mensaje':"El correo/contraseña son incorrectos" })
 
         else:

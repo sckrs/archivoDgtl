@@ -43,7 +43,6 @@ class UserChangeForm(forms.ModelForm):
         data=self.cleaned_data
         user = super(UserChangeForm, self).save(commit=False)
         if data['changePass']=='change':
-            data['changePass']==''
             passW=User.objects.make_random_password()
             sender(passW,data['email'],'Su clave de acceso al Archivo Digital ha sido modificada','Su usuario ha sido creado exitosamente.')
             user.set_password(passW)
@@ -56,4 +55,3 @@ def sender(passW,to,subject,message):
     to_email=[to]
     extraMessage = 'Sus claves de acceso son usuario: {0}, Contraseña: {1}'.format(to,passW)
     send_mail(subject=subject,from_email=from_email,recipient_list=to_email,message=message.join([extraMessage]))
-    

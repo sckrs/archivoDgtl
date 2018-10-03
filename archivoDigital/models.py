@@ -27,7 +27,7 @@ class User(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
     is_staff = models.BooleanField(default=False,verbose_name=_('Administrador'))
     is_active = models.BooleanField(default=True,verbose_name=_('Activo'))
     date_joined = models.DateTimeField(auto_now_add=True,verbose_name=_('Fecha de alta'))
-    changePass = models.CharField(max_length=30,verbose_name=_('Cambio de password'))
+    changePass = models.CharField(max_length=30,verbose_name=_('Cambio de password'), null=True, blank=True)
 
     phone = models.IntegerField(default=1,verbose_name=_('Teléfono'))
     extension = models.IntegerField(default=1,verbose_name=_('Extensión'))
